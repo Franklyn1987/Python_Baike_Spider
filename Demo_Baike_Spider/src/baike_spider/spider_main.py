@@ -42,15 +42,19 @@ class SpiderMain(object):
                 self.outputer.collect_data(new_data)    
                 
                 #爬取到100个,退出
-                if count == 100 :
+                if count == 50 :
+                    print 'craw end'
                     break
                 count = count + 1
             
             except:
                 print 'craw failed'
             
-        #输出器输出html页面
+        #第一种输出方式 : 输出器输出html页面
         self.outputer.output_html()
+        
+        #第一种输出方式 : 输出器输出excel
+        self.outputer.output_excel()
 
 #函数主入口,用来启动整个爬虫程序
 if __name__ == '__main__':
